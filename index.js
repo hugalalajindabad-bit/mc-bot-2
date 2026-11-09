@@ -100,7 +100,7 @@ bot.on('chat', (username, message) => {
   // Check command
  /* if (message.toLowerCase() === '!ping') {
     bot.chat('pong');
-  }*/
+  }********/
 });
 
 /*
@@ -117,7 +117,7 @@ function getServerData(bot) {
   // Bot ka username player list se exclude
   const playerList = players; /*.filter(
     name => name !== bot.username
-  );*/
+  );***********
 
   // Environment
   const time = bot.time?.isDay ? "day" : "night";
