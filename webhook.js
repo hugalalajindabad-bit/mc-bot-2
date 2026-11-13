@@ -29,11 +29,11 @@ async function getPeerPings(excludeNode) {
     let match;
 
     while ((match = regex.exec(pingField.value)) !== null) {
-      const [, node, ping] = match;
+      const node = `Node-${match[1]}`;
 
       if (node === excludeNode) continue;
 
-      result[node] = Number(ping);
+      result[node] = Number(match[2]);
     }
 
     return result;
@@ -82,7 +82,7 @@ async function updateServerStatus(data) {
   const lastUpdated = Math.floor(Date.now() / 1000);
 
   // other server'# ping
-  let othersPing = getPeerPings("Node-A1");
+  let othersPing = await getPeerPings("Node-A1");
   
   // Embed
   const embed = {
@@ -103,7 +103,7 @@ async function updateServerStatus(data) {
       },
       {
         name: "• `🏓` Ping",
-        value: `↳ [<:server:1570687895440724039>] - Node-A1 : \`${online ? `${ping}` : "N/A"} ms\` [Asia]
+        value: `↳ [<:server:1570687895440724039>] - Node-A1 : \`${online ? `${ping}` : "-1"} ms\` [Asia]
 ↳ [<:server:1570687895440724039>] - Node-U1 : \`${othersPing["Node-U1"]}\` [US-East] \n\u200B`,
         inline: true
       },
