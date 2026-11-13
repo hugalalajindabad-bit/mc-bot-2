@@ -104,7 +104,7 @@ async function updateServerStatus(data) {
       {
         name: "• `🏓` Ping",
         value: `↳ [<:server:1570687895440724039>] - Node-A1 : \`${online ? `${ping}` : "-1"} ms\` [Asia]
-↳ [<:server:1570687895440724039>] - Node-U1 : \`${othersPing["Node-U1"]}\` [US-East] \n\u200B`,
+↳ [<:server:1570687895440724039>] - Node-U1 : \`${othersPing["Node-U1"]} ms\` [US-East] \n\u200B`,
         inline: true
       },
       {
