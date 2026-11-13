@@ -24,7 +24,7 @@ async function getPeerPings(excludeNode) {
     // - Node-A1 : `5ms` [Asia]
     // - Node-U1 : `53ms` [US-East]
 
-    const regex = /- (Node-[A-Z]\d+)\s*:\s*`(\d+(?:\.\d+)?)ms`/g;
+    const regex = /Node-([A-Z]\d+)\s*:\s*`(-?\d+(?:\.\d+)?)\s*ms`/g;
 
     let match;
 
@@ -103,7 +103,7 @@ async function updateServerStatus(data) {
       },
       {
         name: "• `🏓` Ping",
-        value: `↳ [<:server:1570687895440724039>] - Node-A1 : \`${online ? `${ping} ms` : "N/A"} ms\` [Asia]
+        value: `↳ [<:server:1570687895440724039>] - Node-A1 : \`${online ? `${ping}` : "N/A"} ms\` [Asia]
 ↳ [<:server:1570687895440724039>] - Node-U1 : \`${othersPing["Node-U1"]}\` [US-East] \n\u200B`,
         inline: true
       },
